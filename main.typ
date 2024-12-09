@@ -5,9 +5,7 @@
 #let m = yaml("/metadata.yml")
 #let fonts = m.at("fonts")
 
-#set document(
-  title: m.at("tiêu đề"), author: m.at("sinh viên").map(s => s.at("tên")),
-)
+#set document(title: m.at("title"), author: m.at("students").map(s => s.at("name")))
 #set text(font: fonts.at("serif"), lang: "vi")
 #show raw: set text(font: fonts.at("monospace"))
 #show raw.where(block: true): set block(fill: gray.lighten(90%), width: 100%, inset: (x: 1em, y: 1em))

@@ -12,13 +12,13 @@
     #let current-page = counter(page).at(loc).at(0)
     #let total-pages = counter(page).final(loc).at(0)
 
-    #let semester = m.at("học kỳ")
+    #let semester = m.at("semester")
     #let semester-of-year = calc.rem(semester, 10)
     // change this if you use this in the 2100s
     #let year-from = calc.round(semester / 10) + 2000
     #let year-to = year-from + 1
 
-    Báo cáo môn #m.at("môn học").at("tên") - Học kỳ #semester-of-year năm học #year-from - #year-to
+    Báo cáo môn #m.at("course").at("name") - Semester #semester-of-year year #year-from - #year-to
     #h(1fr)
     Trang #current-page/#total-pages
 ])

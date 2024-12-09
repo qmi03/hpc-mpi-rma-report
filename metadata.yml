@@ -1,13 +1,15 @@
-tiêu đề: >-
-  Autofill Service
-môn học:
-  tên: Đồ Án Chuyên Ngành
-  mã: CO4029
-học kỳ: 241
-giảng viên: Thoại Nam, Diệp Thanh Đăng
-sinh viên:
-  - tên: Phạm Võ Quang Minh
-    mssv: 2111762
+title: >-
+  studying and developing distributed barrier algorithm using the hybrid programming model combining MPI-4.2 and C++11
+course:
+  name: THESIS PROPOSAL
+  id: CO4029
+semester: 241
+supervisors: 
+  - name: Ph.D Thoại Nam
+  - name: M.Sc Diệp Thanh Đăng
+students:
+  - name: Phạm Võ Quang Minh
+    id: 2111762
 fonts:
-  serif: "STIX Two Text"
+  serif: "Times New Roman"
   monospace: "JetBrains Mono"

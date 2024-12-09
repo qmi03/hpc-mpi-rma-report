@@ -6,16 +6,16 @@
 #show: upper
 
 #locate(loc => [
-    // skip first page header
-    #if loc.page() == 1 {
-        return
-    }
+  // skip first page header
+  #if loc.page() == 1 {
+    return
+  }
 
-    #box(image("/static/images/logo.png", height: 2.5em))
-    #h(0.5cm)
-    #box[
-        Trường Đại học Bách Khoa - ĐHQG-HCM \
-        Khoa Khoa học và Kỹ thuật Máy tính
-    ]
-    #h(1fr)
+  #box(image("/static/images/logo.png", height: 2.5em))
+  #h(0.5cm)
+  #box[
+    HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY\
+    FACULTY OF COMPUTER SCIENCE AND ENGINEERING
+  ]
+  #h(1fr)
 ])
