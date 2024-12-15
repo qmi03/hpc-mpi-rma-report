@@ -9,3 +9,14 @@
 
 #{ include "./chapters/c4/index.typ" }
 #pagebreak()
+
+#{ include "./chapters/c5/index.typ" }
+#pagebreak()
+
+#{ include "./chapters/c6/index.typ" }
+#pagebreak()
+
+
+
+
+

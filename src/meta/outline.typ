@@ -1,3 +1,3 @@
 #outline(indent: true)
-#outline(title: "Danh mục hình ảnh", target: figure.where(kind: image))
-#outline(title: "Danh mục bảng biểu", target: figure.where(kind: table))
+#outline(title: "List of figures", target: figure.where(kind: image))
+#outline(title: "List of tables", target: figure.where(kind: table))

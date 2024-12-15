@@ -1,6 +1,9 @@
 #{ include "/src/meta/cover.typ" }
 #pagebreak()
 
+#{ include "/src/meta/disclaimer.typ" }
+#pagebreak()
+
 #{ include "/src/meta/outline.typ" }
 #pagebreak()
 

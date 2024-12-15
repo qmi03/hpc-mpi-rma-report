@@ -1,2 +1,5 @@
-#set heading(offset: 0)
-#{ include "./1.typ" }
+= Introduction
+#set heading(offset: 1)
+#{ include "./1.1.typ" }
+#{ include "./1.2.typ" }
+#{ include "./1.3.typ" }
