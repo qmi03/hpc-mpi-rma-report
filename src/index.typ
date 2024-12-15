@@ -9,5 +9,3 @@
 
 #{ include "/src/contents/index.typ" }
 #pagebreak()
-
-#{ include "/src/meta/references.typ" }

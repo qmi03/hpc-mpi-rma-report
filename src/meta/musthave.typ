@@ -31,7 +31,7 @@ during both good times and bad. They have always been there for me, offering
 emotional and financial support and being the pillars I can rely on when times
 are tough.
 
-I would also like to extend my heartfelt thanks to Mr. Diệp Thanh Đăng for
+I would also like to extend my deepest gratitude to Mr. Diệp Thanh Đăng for
 inspiring me and guiding me toward this research topic. His mentorship helped me
 discover my true passion and led me to choose this meaningful topic for my
 thesis.
