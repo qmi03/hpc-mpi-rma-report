@@ -1,6 +1,6 @@
 = Background
 #set heading(offset: 1)
 
-#{ include "./2.1.typ" }
+#{ include "./mpi.typ" }
 
 #{ include "./2.2.typ" }

@@ -1,5 +1,5 @@
 title: >-
-  studying and developing distributed barrier algorithm using the hybrid programming model combining MPI-4.2 and C++11
+  studying and developing distributed barrier algorithm using the hybrid programming model combining MPI-4.1 and C++11
 course:
   name: THESIS PROPOSAL
   id: CO4029

@@ -1,19 +1,19 @@
-#{ include "./chapters/c1/index.typ" }
+#{ include "./c1/index.typ" }
 #pagebreak()
 
-#{ include "./chapters/c2/index.typ" }
+#{ include "./c2/index.typ" }
 #pagebreak()
 
-#{ include "./chapters/c3/index.typ" }
+#{ include "./c3/index.typ" }
 #pagebreak()
 
-#{ include "./chapters/c4/index.typ" }
+#{ include "./c4/index.typ" }
 #pagebreak()
 
-#{ include "./chapters/c5/index.typ" }
+#{ include "./c5/index.typ" }
 #pagebreak()
 
-#{ include "./chapters/c6/index.typ" }
+#{ include "./c6/index.typ" }
 #pagebreak()
 
 

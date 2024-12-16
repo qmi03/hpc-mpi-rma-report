@@ -20,3 +20,44 @@ andrea2:
     value: https://codewithandrea.com/articles/flutter-state-management-riverpod/
     date: 2023-06-10
   parent: *andrea0
+
+mpi41:
+    author : 
+        - Message Passing Interface Forum
+    title  : "MPI: A Message-Passing Interface Standard Version 4.1"
+    url    : 
+        value: https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report.pdf
+        year   : 2023
+        month  : nov
+
+quaranta-mpi:
+    type: Article
+    title: A Novel MPI+MPI Hybrid Approach Combining MPI-3 Shared Memory Windows and C11/C++11 Memory Model
+    author: 
+        - Quaranta, Lionel
+        - Maddegedara, Lalith
+    date: 2021-11
+    page-range: 125-144
+    serial-number:
+        doi: 10.1016/j.jpdc.2021.06.008
+    parent:
+        type: Periodical
+        title: Journal of Parallel and Distributed Computing
+        volume: 157
+    url: 
+        value: https://doi.org/10.1016/j.jpdc.2021.06.008
+        date: 2022-05-11
+
+
+article-key:
+  type: Article
+  title: # Title of the paper
+  author: # List of authors
+  date: # Publication year
+  serial-number:
+      doi: 10.1016/j.jpdc.2021.06.008
+  parent:
+      type: Periodical
+      title: # Journal name
+      volume: # Volume number
+      issue: # Issue number
