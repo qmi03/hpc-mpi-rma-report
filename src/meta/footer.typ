@@ -20,5 +20,5 @@
 
     #m.at("course").at("name") Report - Semester #semester-of-year year #year-from - #year-to
     #h(1fr)
-    Trang #current-page/#total-pages
+    Page #current-page/#total-pages
 ])
