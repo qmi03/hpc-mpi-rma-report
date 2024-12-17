@@ -45,36 +45,23 @@ quaranta-mpi:
     type: Periodical
     title: Journal of Parallel and Distributed Computing
     volume: 157
-  url: 
-    value: https://doi.org/10.1016/j.jpdc.2021.06.008
-    date: 2022-05-11
 
 butterfly-barrier:
-    type: Article
-    author:
-        - Brooks, Eugene D.
-    title: The butterfly barrier
-    date: 1986-08-01
-    page-range: 295-307
-    volume: 15
-    issue: 4
-    abstract: |
-        We describe an algorithm for barrier synchronization that requires
-        only read and write to shared store. The algorithm is faster than
-        the traditional locked counter approach for two processors and has
-        an attractive log2N time scaling for larger N. The algorithm is
-        free of hot spots and critical regions and requires a shared memory
-        bandwidth which grows linearly with N, the number of participating
-        processors. We verify the technique using both a real shared memory
-        multiprocessor, for numbers of processors up to 30, and a shared
-        memory multiprocessor simulator, for numbers of processors up to 256.
-    serial-number:
-        doi: 10.1007/BF01407877
-        issn: 1573-7640
-    url: https://doi.org/10.1007/BF01407877
-    parent:
-        type: Periodical
-        title: International Journal of Parallel Programming
+  type: Article
+  author:
+      - Brooks, Eugene D.
+  title: The butterfly barrier
+  date: 1986-08-01
+  page-range: 295-307
+  volume: 15
+  issue: 4
+  abstract: We describe an algorithm for barrier synchronization that requires only read and write to shared store. The algorithm is faster than the traditional locked counter approach for two processors and has an attractive log2N time scaling for larger N. The algorithm is free of hot spots and critical regions and requires a shared memory bandwidth which grows linearly with N, the number of participating processors. We verify the technique using both a real shared memory multiprocessor, for numbers of processors up to 30, and a shared memory multiprocessor simulator, for numbers of processors up to 256.
+  serial-number:
+      doi: 10.1007/BF01407877
+      issn: 1573-7640
+  parent:
+      type: Periodical
+      title: International Journal of Parallel Programming
 
 
 sync-algos:
@@ -89,9 +76,9 @@ sync-algos:
   address: New York, NY, USA
   volume: 9
   number: 1
-  issn: 0734-2071
-  url: https://doi.org/10.1145/103727.103729
-  doi: 10.1145/103727.103729
+  serial-number:
+    doi: 10.1145/103727.103729
+    issn: 0734-2071
   abstract: >
     Busy-wait techniques are heavily used for mutual exclusion and barrier synchronization
     in shared-memory parallel programs. Unfortunately, typical implementations of
@@ -144,4 +131,26 @@ dissemination:
     - Raphael A. Finkel
   booktitle: International Conference on Parallel Processing
   year: 1988
-  url: https://api.semanticscholar.org/CorpusID:43669757
+  publisher: University of Kentucky, Department of Computer Science
+
+williams2019c:
+  type: book
+  title: C++ Concurrency in Action
+  author: Williams, A.
+  isbn: 9781638356356
+  url: https://books.google.com.vn/books?id=BzgzEAAAQBAJ
+  year: 2019
+  publisher: Manning
+
+herlihy2020art:
+  type: book
+  title: The Art of Multiprocessor Programming
+  author: 
+    - Herlihy, M.
+    - Shavit, N.
+    - Luchangco, V.
+    - Spear, M.
+  isbn: 9780123914064
+  url: https://books.google.com.vn/books?id=7MqcBAAAQBAJ
+  year: 2020
+  publisher: Morgan Kaufman

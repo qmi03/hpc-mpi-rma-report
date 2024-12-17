@@ -1,9 +1,9 @@
 = C++11 Multithreading
 
 C++11 introduced native support for multithreading directly in the standard
-library. This eliminated the previous reliance on platform-specific threading
-libraries like pthread, offering a more portable and standardized approach to
-parallel computing.
+library @williams2019c. This eliminated the previous reliance on
+platform-specific threading libraries like pthread, offering a more portable and
+standardized approach to parallel computing.
 
 == Thread Management
 The `<thread>` header has now become the pivot of C++11's multithreading

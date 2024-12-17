@@ -2,6 +2,7 @@
   paper: "a4", header: { include "/src/meta/header.typ" }, footer: { include "/src/meta/footer.typ" }, margin: (top: 30mm, bottom: 20mm, left: 30mm, right: 20mm),
 )
 
+#set par(justify: true)
 #let m = yaml("/metadata.yml")
 #let fonts = m.at("fonts")
 
