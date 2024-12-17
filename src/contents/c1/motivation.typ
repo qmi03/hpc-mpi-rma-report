@@ -21,5 +21,3 @@ this programming model in terms of performance through a newly proposed barrier
 algorithm. However, they have ignored a large number of existing barrier
 algorithms that have been designed for similar programming models.
 
-Hence, the goal of this thesis is to research and develop distributed barrier
-synchronization algorithms using the hybrid programming model.
