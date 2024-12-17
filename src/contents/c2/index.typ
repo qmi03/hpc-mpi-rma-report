@@ -1,6 +1,4 @@
 = Background
-Here's an overview of Chapter 2 similar to the previous approach:
-
 Chapter 2 provides a comprehensive background on the fundamental technologies
 underlying the research: Message Passing Interface (MPI) and C++11
 Multithreading. The chapter explores these technologies within the context of
