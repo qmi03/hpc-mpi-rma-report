@@ -1,4 +1,4 @@
-= What I will be doing in this
+= Objectives
 - Study high performance computing
 - Study programming model MPI-4.1
 - Study C++11

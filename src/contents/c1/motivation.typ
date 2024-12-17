@@ -1,5 +1,3 @@
-#let m = yaml("/metadata.yml")
-
 = Motivation
 Applications of high-performance computing have gained tremendous popularity due
 to its applications in various scientific domains, from simulations of particle

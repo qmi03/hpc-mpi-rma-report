@@ -1,3 +1,3 @@
 = Related Work
 #set heading(offset: 1)
-#{ include "./3.1.typ" }
+#{ include "./barrier_algos.typ" }
