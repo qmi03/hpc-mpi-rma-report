@@ -42,14 +42,14 @@
 #set text(weight: "regular", size: 15pt)
 #show: upper
 #grid(
-  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [supervisor(s):]), align(left, for s in m.at("supervisors") [
+  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [supervisors:]), align(left, for s in m.at("supervisors") [
     #v(1em, weak: true)
     #s.at("name")
   ]),
 )
 
 #grid(
-  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [Students:]), align(left, for s in m.at("students") [
+  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [Student:]), align(left, for s in m.at("students") [
     #v(1em, weak: true)
     #s.at("name") - #s.at("id")
   ]),

@@ -12,12 +12,12 @@ synchronization:
     wakeup flag
 
 2. Multiprocessors Without Coherent Caches or With Directory-Based Coherency:
-  - Dissemination Barrier:
+  - Dissemination Barrier@dissemination:
     - Distributed data structures respecting locality
     - Critical path approximately one-third shorter than tree-based barriers
     - Total interconnect traffic complexity of O(P logP)
 
-  - Tree-Based Barrier:
+  - Tree-Based Barrier@sync-algos:
     - Alternative approach with different performance characteristics
     - Total interconnect traffic complexity of O(P)
 

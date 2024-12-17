@@ -8,4 +8,3 @@
 #pagebreak()
 
 #{ include "/src/contents/index.typ" }
-#pagebreak()

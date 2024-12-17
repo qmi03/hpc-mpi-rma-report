@@ -76,6 +76,7 @@ butterfly-barrier:
         type: Periodical
         title: International Journal of Parallel Programming
 
+
 sync-algos:
   type: article
   authors:
@@ -134,3 +135,13 @@ article-key:
       title: # Journal name
       volume: # Volume number
       issue: # Issue number
+
+dissemination:
+  type: thesis
+  title: An Optimal Scheme for Disseminating Information
+  authors:
+    - Yijie Han
+    - Raphael A. Finkel
+  booktitle: International Conference on Parallel Processing
+  year: 1988
+  url: https://api.semanticscholar.org/CorpusID:43669757
