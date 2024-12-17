@@ -1,8 +1,5 @@
 = Related Works
 #set heading(offset: 1)
-#{ include "./barrier_algos.typ" }
-= Barrier algorithms
-
 MellorCrummey et al @sync-algos propose nuanced recommendations for barrier
 synchronization:
 

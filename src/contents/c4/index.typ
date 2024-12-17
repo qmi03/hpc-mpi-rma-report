@@ -1,6 +1,10 @@
 = Algorithm
+This chapter explore Brook's barrier algorithm in shared memory model, and my
+implementation of Brook's two-process barrier algorithm using MPI's RMA
+Operations.
+
 == Brook Algorithm
-Brooks @butterfly-barrier bases the n-process barrier on a two-process barrier
+Brook @butterfly-barrier bases the n-process barrier on a two-process barrier
 using two shared variables. Its algorithm is as follows:
 #set rect(inset: 8pt, fill: rgb(white), width: 100%)
 
@@ -48,6 +52,8 @@ using two shared variables. Its algorithm is as follows:
     SetByProcess1 := false;
   ],
 )
+
+== My proposed implementation of Brook's algorithm
 We can extend the concept of Brooks’ two-process barrier, where two processes
 share memory through shared variables, to a one-sided communication model.
 
