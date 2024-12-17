@@ -21,7 +21,7 @@ For the upcoming semester, my research will focus on:
   synchronization strategies
 - Potential integration and contribution to existing applications
 
-== Gant chart timeline
+== Gantt chart timeline
 #import "@preview/timeliney:0.0.1"
 
 #timeliney.timeline(
