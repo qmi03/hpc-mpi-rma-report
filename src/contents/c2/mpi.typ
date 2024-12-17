@@ -76,5 +76,6 @@ Terminology clarification:
 - Origin (or origin process): The MPI process initiating the RMA procedure
 - Target (or target process): The MPI process whose memory is being accessed
 
-In a put operation: source = origin, destination = target In a get operation:
-source = target, destination = origin
+In a put operation: source = origin, destination = target
+
+In a get operation: source = target, destination = origin

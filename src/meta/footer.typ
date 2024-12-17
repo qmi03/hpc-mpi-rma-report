@@ -18,7 +18,7 @@
     #let year-from = calc.round(semester / 10) + 2000
     #let year-to = year-from + 1
 
-    Báo cáo môn #m.at("course").at("name") - Semester #semester-of-year year #year-from - #year-to
+    #m.at("course").at("name") Report - Semester #semester-of-year year #year-from - #year-to
     #h(1fr)
     Trang #current-page/#total-pages
 ])

@@ -22,4 +22,4 @@
 
 #{ include "/src/index.typ" }
 
-#bibliography("/bibliography.yml")
+#bibliography("/bibliography.yml", title: [References])
