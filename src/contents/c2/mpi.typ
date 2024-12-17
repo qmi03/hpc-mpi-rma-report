@@ -1,10 +1,10 @@
 = Message Passing Interface (MPI)
-== MPI
-MPI is a message-passing library interface specification - essentially a set of
-standard guidelines for both implementors and users of the parallel programming
-model. In this programming paradigm, data traverses between the address spaces
-of different processes through cooperative operations - what we might call "hand-shakes"
-or "classical" message-passing techniques.
+== Introduction
+MPI @mpi41 is a message-passing library interface specification - essentially a
+set of standard guidelines for both implementors and users of the parallel
+programming model. In this programming paradigm, data traverses between the
+address spaces of different processes through cooperative operations - what we
+might call "hand-shakes" or "classical" message-passing techniques.
 
 Beyond the classical model, MPI extends its capabilities by offering:
 - Collective operations
