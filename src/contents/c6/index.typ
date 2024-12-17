@@ -25,7 +25,7 @@ For the upcoming semester, my research will focus on:
 #import "@preview/timeliney:0.0.1"
 
 #figure(
-  caption: [Gantt chart timeline], timeliney.timeline(
+  caption: [Gantt chart timeline.], timeliney.timeline(
     show-grid: true, {
       import timeliney: *
 
