@@ -17,8 +17,8 @@ For the upcoming semester, my research will focus on:
 - Implements barrier algorithm on C++ shared memory model
 - Implement C++ and MPI Hybrid model
 - Comprehensive testing of proposed algorithms on existing computational clusters
-- Rigorous performance benchmarking to identify and select optimal barrier synchronization
-  strategies
+- Rigorous performance benchmarking to identify and select optimal barrier
+  synchronization strategies
 - Potential integration and contribution to existing applications
 
 == Gant chart timeline
@@ -36,20 +36,19 @@ For the upcoming semester, my research will focus on:
       group(..range(4).map(n => strong("" + str(n + 1)))), group(..range(4).map(n => strong("" + str(n + 1)))), group(..range(4).map(n => strong("" + str(n + 1)))), group(..range(4).map(n => strong("" + str(n + 1)))),
     )
     taskgroup(
-      title: [*MPI Barrier Implementation*], {
+      title: [*Barrier Implementation*], {
         task("Research and Design", (0, 1), style: (stroke: 2pt + green))
         task(
           "Brook Dissemination & Tournament", (1, 3), style: (stroke: 2pt + green),
         )
         task("Tree Based", (3, 4), style: (stroke: 2pt + green))
-        task("Other Barrier Algorithms", (4, 5), style: (stroke: 2pt + green))
+        task("Other barrier algorithms", (4, 5), style: (stroke: 2pt + green))
       },
     )
 
-    taskgroup(title: [*C++11 Barrier Implementation*], {
+    taskgroup(title: [*C++11 and MPI Hybrid model*], {
       task("Research and Design", (4, 5), style: (stroke: 2pt + green))
-      task("Centralized", (5, 6), style: (stroke: 2pt + green))
-      task("Other Barrier Algorithms", (6, 8), style: (stroke: 2pt + green))
+      task("Implementation", (6, 8), style: (stroke: 2pt + green))
     })
     taskgroup(
       title: [*Testing and Benchmarking*], {

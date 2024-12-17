@@ -56,7 +56,7 @@ Instead of storing the shared variables in a common memory segment, each process
 maintains its own copy, allowing the other process to read and modify it using
 one-sided communication primitives.
 
-This is my implementation of Brook's two-process barrier technique
+This is my simple implementation of Brook's two-process barrier technique
 ```cpp
 #include "mpi.h"
 #include "mpi_proto.h"
