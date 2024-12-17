@@ -19,4 +19,5 @@ communicating and synchronizing within one computation node.
 A recent research by Quaranta et al. @quaranta-mpi has shown the potential of
 this programming model in terms of performance through a newly proposed barrier
 algorithm. However, they have ignored a large number of existing barrier
-algorithms that have been designed for similar programming models. @herlihy2020art
+algorithms that have been designed for similar programming models.
+@herlihy2020art
