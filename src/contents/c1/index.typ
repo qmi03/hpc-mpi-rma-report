@@ -1,9 +1,11 @@
+#import "/macros.typ": bao
 = Introduction
+
 In Chapter 1, I introduce the project's research focus on distributed barrier
-synchronization algorithms in high-performance computing. Section 1.1 explores
+synchronization algorithms in high-performance computing. Section 1.1 #bao[should use some commands function in the same way as \ref{} in latex] explores
 the motivation behind the research, highlighting the growing importance of
 high-performance computing across scientific domains, including large language
-model training and complex simulations. The section emphasizes the critical role
+model training and complex simulations. #bao[Particularly], the section emphasizes the critical role
 of barrier algorithms in synchronizing computational processes across different
 nodes.
 
