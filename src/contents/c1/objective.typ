@@ -1,10 +1,10 @@
-= Objectives
+= Objectives <objectives>
 == Brief overview
 Research and develop distributed barrier synchronization algorithms using the
 hybrid programming model.
 
 == Details
-The specific objectives of this thesis are as follows:
+The specific objectives of this report are as follows:
 - Explore key concepts in high-performance computing (HPC).
 - Study MPI-4.1 and its programming model.
 - Investigate C++11 threading and concurrency features.

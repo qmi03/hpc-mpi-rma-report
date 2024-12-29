@@ -1,4 +1,4 @@
-= Thesis structure
+= Thesis structure <structure>
 *Chapter 1: Introduction*
 
 Provides an overview of the thesis, including the motivation, objectives, and
