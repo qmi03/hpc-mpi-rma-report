@@ -6,7 +6,7 @@ structure.
 
 *Chapter 2: Background*
 
-Introduces foundational concepts in HPC, MPI-4.1, and C++11, focusing on
+Introduces foundational concepts in HPC, MPI-3, and C++11, focusing on
 multithreading and synchronization.
 
 *Chapter 3: Related Works*

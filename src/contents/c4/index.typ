@@ -1,11 +1,17 @@
-= Algorithm
-This chapter explore Brook's barrier algorithm in shared memory model, and my
-implementation of Brook's two-process barrier algorithm using MPI's RMA
-Operations.
+= Algorithm <algorithm>
+This chapter presents Brook's barrier algorithm within the context of the shared
+memory model (@brook_algo).
 
-== Brook Algorithm
+@impl provides a straightforward implementation of Brook's two-process barrier
+algorithm using MPI's Remote Memory Access (RMA) operations.
+
+Finally, @commentary offers an in-depth analysis of my implementation,
+highlighting its key components and comparing it to the shared memory model.
+
+#pagebreak()
+== Brook Algorithm <brook_algo>
 Brook @butterfly-barrier bases the n-process barrier on a two-process barrier
-using two shared variables. Its algorithm is as follows:
+using two shared variables. The algorithm is as follows:
 #set rect(inset: 8pt, fill: rgb(white), width: 100%)
 
 #grid(
@@ -52,10 +58,10 @@ using two shared variables. Its algorithm is as follows:
     SetByProcess1 := false;
   ],
 )
-
-== My proposed implementation of Brook's algorithm
+// bo sung
+== My proposed implementation of Brook's algorithm <impl>
 We can extend the concept of Brooks’ two-process barrier, where two processes
-share memory through shared variables, to a one-sided communication model.
+share memory through shared variables, to the one-sided communication model.
 
 In this model, one process can directly access the variables of another process.
 Instead of storing the shared variables in a common memory segment, each process
@@ -65,73 +71,161 @@ one-sided communication primitives.
 This is my simple implementation of Brook's two-process barrier technique
 ```cpp
 #include "mpi.h"
-#include "mpi_proto.h"
-#include <cstdio>
-#include <stdio.h>
 
 int brook_2_proc(const MPI_Comm &comm) {
-  // get number of ranks
-  int n_ranks;
+  // Get number of ranks and current rank
+  int n_ranks, rank;
   MPI_Comm_size(comm, &n_ranks);
-  // get current rank
-  int rank;
   MPI_Comm_rank(comm, &rank);
 
+  // Ensure exactly 2 processes are used
   if (n_ranks != 2) {
     if (rank == 0) {
       fprintf(stderr, "This program requires exactly 2 processes.\n");
     }
     MPI_Abort(comm, 1);
   }
+
+  // Initialize shared window
   bool exposed_buffer{false};
-  bool false_value = false;
-  bool true_value = true;
   MPI_Win win_buffer_handler;
-  MPI_Win_create(&exposed_buffer, sizeof(bool), sizeof(bool), MPI_INFO_NULL,
-                 comm, &win_buffer_handler);
-  // barrier
-  // step 1: wait for other process to set my exposed buffer to false
+  MPI_Win_create(&exposed_buffer, sizeof(bool), sizeof(bool),
+                 MPI_INFO_NULL, comm, &win_buffer_handler);
+
+  // Barrier synchronization
+  // Step 1: Wait for my exposed buffer to be reset
   while (exposed_buffer) {
-    // busy waiting
+    // Busy-waiting loop
   }
 
-  // step 2: set my exposed buffer to true
-  // set my exposed buffer to true
+  // Step 2: Set my exposed buffer to true
   exposed_buffer = true;
 
-  // step 3: wait for the other process to set their exposed buffer to true
-  bool flag_from_other_process = false;
+  // Step 3: Wait for the other process's exposed buffer to be true
+  bool flag_from_other_process{false};
   int target_rank = 1 - rank;
   while (!flag_from_other_process) {
-    // get exposed buffer from the other process
     MPI_Win_lock_all(0, win_buffer_handler);
-    MPI_Get(&flag_from_other_process, 1, MPI_CXX_BOOL, target_rank, 0, 1,
-            MPI_CXX_BOOL, win_buffer_handler);
+    MPI_Get_accumulate(&flag_from_other_process, 0, MPI_CXX_BOOL,
+                       &flag_from_other_process, 1, MPI_CXX_BOOL,
+                       target_rank, 0, 1, MPI_CXX_BOOL,
+                       MPI_NO_OP, win_buffer_handler);
     MPI_Win_flush_all(win_buffer_handler);
     MPI_Win_unlock_all(win_buffer_handler);
   }
 
-  // step 4: set their exposed buffer to false
+  // Step 4: Reset the other process's exposed buffer
+  bool false_value{false};
   MPI_Win_lock_all(0, win_buffer_handler);
-  MPI_Put(&false_value, 1, MPI_CXX_BOOL, target_rank, 0, 1, MPI_CXX_BOOL,
-          win_buffer_handler);
+  MPI_Accumulate(&false_value, 1, MPI_CXX_BOOL,
+                 target_rank, 0, 1, MPI_CXX_BOOL,
+                 MPI_REPLACE, win_buffer_handler);
   MPI_Win_flush(target_rank, win_buffer_handler);
   MPI_Win_unlock_all(win_buffer_handler);
-  // end barrier
+
+  // Cleanup
   return MPI_Win_free(&win_buffer_handler);
-};
-
-int main(int argc, char **argv) {
-  // init the mpi world
-  MPI_Init(&argc, &argv);
-  MPI_Comm comm = MPI_COMM_WORLD;
-  int rank;
-  MPI_Comm_rank(comm, &rank);
-
-  brook_2_proc(comm);
-
-  printf("Process %d: reached destination\n", rank);
-
-  return MPI_Finalize();
 }
 ```
+#figure(
+  [], caption: [My implementation of Brook's two-process barrier using MPI primitives], kind: raw,
+)
+
+== Commentary on Implementation <commentary>
+We analyze the implementation step by step, comparing it with Brook's shared
+memory model:
+
+=== Memory Setup
+In Brook's shared memory model:
+- Two variables are shared between processes
+- Both processes can directly access these variables
+- No explicit initialization needed beyond variable declaration
+
+In my MPI implementation:
+- Each process owns a local buffer (`exposed_buffer`)
+- MPI Window creation establishes remote memory access capability
+- Explicit initialization required through `MPI_Win_create`
+
+=== Step 1: Wait for Reset
+Brook's model:
+```cpp
+while SetByProcess1 do wait;  // Direct memory access
+```
+My implementation:
+```cpp
+while (exposed_buffer) {
+    // Busy-waiting loop
+}
+```
+The implementation directly checks the local buffer since each process owns its
+buffer. This is simpler than Brook's model as we're checking local memory.
+
+=== Step 2: Set Flag
+Brook's model:
+```cpp
+SetByProcess1 := true;  // Direct shared memory write
+```
+My implementation:
+```cpp
+exposed_buffer = true;  // Local memory write
+```
+Similar to Step 1, we're working with local memory, making this operation
+straightforward.
+
+=== Step 3: Wait for Other Process
+Brook's model:
+```cpp
+while not SetByProcess2 do wait;  // Direct memory read
+```
+My implementation:
+```cpp
+while (!flag_from_other_process) {
+    MPI_Win_lock_all(0, win_buffer_handler);
+    MPI_Get_accumulate(&flag_from_other_process, 0, MPI_CXX_BOOL,
+                       &flag_from_other_process, 1, MPI_CXX_BOOL,
+                       target_rank, 0, 1, MPI_CXX_BOOL,
+                       MPI_NO_OP, win_buffer_handler);
+    MPI_Win_flush_all(win_buffer_handler);
+    MPI_Win_unlock_all(win_buffer_handler);
+}
+```
+Key differences:
+- Uses `MPI_Get_accumulate` instead of simple `MPI_Get` to ensure atomic
+  operations
+- The operation is atomic, preventing potential race conditions
+- Requires explicit synchronization through window locks and flushes
+- More complex due to RMA operation setup and synchronization
+
+=== Step 4: Reset Other's Flag
+Brook's model:
+```cpp
+SetByProcess2 := false;  // Direct shared memory write
+```
+My implementation:
+```cpp
+bool false_value{false};
+MPI_Win_lock_all(0, win_buffer_handler);
+MPI_Accumulate(&false_value, 1, MPI_CXX_BOOL,
+               target_rank, 0, 1, MPI_CXX_BOOL,
+               MPI_REPLACE, win_buffer_handler);
+MPI_Win_flush(target_rank, win_buffer_handler);
+MPI_Win_unlock_all(win_buffer_handler);
+```
+Key differences:
+- Uses `MPI_Accumulate` instead of `MPI_Put` for atomic operation
+- Requires explicit synchronization similar to Step 3
+- More complex due to RMA operation requirements
+
+=== Use of Atomic Operations
+The implementation uses `MPI_Get_accumulate` and `MPI_Accumulate` instead of `MPI_Get` and `MPI_Put` for
+two critical reasons:
+
+1. Atomicity Guarantee:
+  - These operations are guaranteed to be atomic by the MPI specification
+  - Prevents race conditions when multiple processes access the same memory location
+  - Ensures consistency of memory operations
+
+2. Memory Ordering:
+  - Atomic operations provide stronger memory ordering guarantees
+  - Help maintain the happens-before relationship between operations
+  - Essential for correct barrier synchronization behavior

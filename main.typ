@@ -2,11 +2,9 @@
   paper: "a4", header: { include "/src/meta/header.typ" }, footer: { include "/src/meta/footer.typ" }, margin: (top: 30mm, bottom: 20mm, left: 30mm, right: 20mm),
 )
 
-
 #set par(justify: true)
 #let m = yaml("/metadata.yml")
 #let fonts = m.at("fonts")
-
 
 #set document(title: m.at("title"), author: m.at("students").map(s => s.at("name")))
 #set text(font: fonts.at("serif"), lang: "en", size: 13pt)
@@ -16,8 +14,13 @@
   set text(fill: blue)
   underline(it)
 }
-
-#set heading(numbering: "1.1.1.a")
+#import "@preview/numbly:0.1.0": numbly
+#set heading(numbering: numbly(
+  "Chapter {1:I}:",
+  "{1}.{2}.",
+  "{1}.{2}.{3}.",
+  "{1}.{2}.{3}.{4}.",
+))
 #show heading: it => {
   it
   v(.5em)

@@ -1,4 +1,8 @@
-= Message Passing Interface (MPI)
+= Message Passing Interface (MPI) <mpi>
+In this section, we'll explore Message Passing Interface, its various paradigms
+for message passing. And then we'll deep dive into its One-Sided Communication
+mechanics as the focus of this thesis.
+
 == Introduction
 MPI @mpi41 is a message-passing library interface specification - essentially a
 set of standard guidelines for both implementors and users of the parallel
@@ -12,9 +16,9 @@ Beyond the classical model, MPI extends its capabilities by offering:
 - Dynamic process creation
 - Parallel I/O
 
-Within this thesis, we'll specifically dive deep into remote-memory access
+Within this thesis, I will specifically dive deep into remote-memory access
 operations in MPI, which form the critical building block for MPI's One-Sided
-Communication, a concept first introduced in MPI-2.
+Communication, a concept first introduced in MPI-2 @mpi2, and later refined in MPI-3 @mpi3.
 
 == One-Sided Communications
 Unlike traditional "classical" Point-to-Point communication - where
@@ -47,6 +51,7 @@ operations are as follows:
   and MPI_FETCH_AND_OP
 - Remote atomic swap: MPI_COMPARE_AND_SWAP
 
+== Memory Model
 MPI supports two distinct memory models:
 
 1. Separate Memory Model:

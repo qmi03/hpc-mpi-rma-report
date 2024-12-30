@@ -1,30 +1,34 @@
+#import "/macros.typ":cxx
 = Related Works
+This section examines two key areas relevant to my implementation: barrier
+synchronization algorithms and hybrid parallelization approaches.
+
+@barrier-algos
+review MellorCrummey's foundational work on barrier algorithms, which provides
+crucial insights into synchronization strategies for different multiprocessor
+architectures.
+
+@hybrid explore recent advances in hybrid parallelization, particularly Quaranta
+and Maddegedara's novel approach combining MPI-3 shared memory windows with the
+C++11 memory model.
+
+Based on these works, @design-decision formulate the implementation strategy
+that leverages both efficient barrier synchronization and modern memory model
+capabilities.
+
+#pagebreak()
+
 #set heading(offset: 1)
-MellorCrummey et al @sync-algos propose nuanced recommendations for barrier
-synchronization:
 
-1. Broadcast-Based Cache-Coherent Multiprocessors:
-  - For modest processor counts: Utilize a centralized counter-based barrier
-  - For larger scales: Implement a 4-ary arrival tree with a central sense-reversing
-    wakeup flag
+#{ include "./barrier_algos.typ" }
+#{ include "./hybrid.typ" }
 
-2. Multiprocessors Without Coherent Caches or With Directory-Based Coherency:
-  - Dissemination Barrier@dissemination:
-    - Distributed data structures respecting locality
-    - Critical path approximately one-third shorter than tree-based barriers
-    - Total interconnect traffic complexity of O(P logP)
-
-  - Tree-Based Barrier@sync-algos:
-    - Alternative approach with different performance characteristics
-    - Total interconnect traffic complexity of O(P)
-
-The dissemination barrier demonstrates superior performance on architectures
-like the Butterfly, which can execute parallel non-interfering network
-transactions across multiple processors.
-
-From this, my proposal for a barrier algorithm within a computation node like
-C++ will use the broadcast-based cache-coherent multiprocessors method. For
-inter-core communication, I will implement the second approach.
-
-This choice aligns with the expectation that modern multi-core processors
-typically maintain cache coherence.
+#set heading(offset: 0)
+== Design Decisions <design-decision>
+From these works, my proposal for a barrier algorithm within a computation node
+like C++ will use the broadcast-based cache-coherent multiprocessors method. For
+inter-core communication, I will implement the second approach. This choice
+aligns with the expectation that modern multi-core processors typically maintain
+cache coherence. The implementation will also consider the synchronization
+techniques demonstrated by Quaranta and Maddegedara, particularly their use of
+C++11 atomic operations for fine-grained control.

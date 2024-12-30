@@ -5,7 +5,7 @@ Multithreading. The chapter explores these technologies within the context of
 high-performance computing, laying the groundwork for understanding the hybrid
 programming model proposed in the thesis.
 
-Section 2.1 delves into MPI, presenting it as a critical message-passing library
+@mpi delves into MPI, presenting it as a critical message-passing library
 interface specification. The section goes beyond traditional communication
 models by highlighting MPI's advanced capabilities, including collective
 operations, remote-memory access, and parallel I/O. A significant focus is
@@ -14,8 +14,8 @@ allows a single MPI process to independently manage communication tasks. The
 section elaborates on the various Remote Memory Access (RMA) operations and
 explores two distinct memory models: Separate and Unified Memory Models.
 
-Section 2.2 explores C++11 Multithreading, marking a pivotal advancement in
-parallel computing. The section demonstrates how C++11 introduced native,
+@cpp11 explores C++11 Multithreading, marking a pivotal advancement in parallel
+computing. The section demonstrates how C++11 introduced native,
 platform-independent threading support through its standard library. It
 comprehensively covers key multithreading features, including thread management,
 synchronization primitives, atomic operations, and asynchronous programming
@@ -23,7 +23,7 @@ constructs. The discussion emphasizes the advantages of C++11's threading model,
 such as type-safe synchronization and reduced dependency on platform-specific
 libraries.
 
-The concluding Section 2.3 bridges these technologies within the
+The concluding @hpc-context bridges these technologies within the
 high-performance computing context. It illustrates how C++11 multithreading and
 MPI can complement each other: C++11 provides efficient inter-core communication
 within a single node, while MPI handles communication between different
@@ -34,23 +34,41 @@ technologies.
 By providing this detailed technological background, Chapter 2 establishes the
 theoretical and practical foundations necessary for understanding the subsequent
 research on barrier synchronization algorithms in high-performance computing.
+
+#pagebreak()
 #set heading(offset: 1)
 
 #{ include "./mpi.typ" }
 
 #{ include "./cpp11.typ" }
 
-= HPC Context
-In the landscape of high-performance computing, C++11 multithreading offers a
-nuanced approach to parallel processing. To illustrate this idea of bridging
-C++11 multithreading library and MPI, consider a typical high-performance
-computing cluster: each node typically comprises one or more multi-core
-processors.
-- Within a single personal computer (or computation node), C++11 multithreading
-  provides an efficient mechanism for inter-core communication
-- For communication between different computers in a cluster, Message Passing
-  Interface (MPI) remains the preferred approach
+= HPC Context <hpc-context>
+In the landscape of high-performance computing (HPC), C++11 multithreading
+provides a standardized approach to shared-memory parallel processing. When
+considering hybrid parallelization strategies in modern HPC environments,
+C++11's threading capabilities play a crucial role alongside distributed
+computing protocols.
 
-This makes C++11's threading library particularly effective for parallelizing
-computations within a single, multi-core system, complementing MPI's inter-node
-communication capabilities.
+To illustrate the complementary relationship between C++11 multithreading and
+Message Passing Interface (MPI), consider a typical HPC cluster architecture:
+
+- Within a single computation node: * C++11 multithreading provides efficient
+  shared-memory parallelism across CPU
+  cores* Thread communication occurs through direct memory access *
+  Synchronization is handled through native C++11 primitives (mutex, atomic
+  operations)* Zero-copy data sharing is possible between threads
+
+- Between cluster nodes: * MPI handles inter-node communication through message
+  passing* Network infrastructure facilitates data transfer * Explicit data
+  serialization and communication required* Each node runs independent processes
+
+This hierarchical approach to parallelism, often called hybrid parallelization,
+leverages the strengths of both paradigms:
+1. C++11 threads efficiently utilize shared memory within a node
+2. MPI manages distributed memory communication across the cluster
+3. The combination can potentially reduce the overall MPI process count
+4. Memory footprint can be optimized by sharing data between threads
+
+This makes C++11's threading library particularly effective in modern HPC
+applications, where it serves as the intra-node parallelization layer in hybrid
+MPI+threads programs.

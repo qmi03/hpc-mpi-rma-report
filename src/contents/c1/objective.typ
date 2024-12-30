@@ -6,9 +6,9 @@ hybrid programming model.
 == Details
 The specific objectives of this report are as follows:
 - Explore key concepts in high-performance computing (HPC).
-- Study MPI-4.1 and its programming model.
+- Study MPI-3 and its programming model.
 - Investigate C++11 threading and concurrency features.
-- Research the hybrid programming model combining MPI-4.1 and C++11.
+- Research the hybrid programming model combining MPI-3 and C++11.
 - Survey existing barrier synchronization algorithms in related programming
   models.
 - Analyze and identify promising barrier algorithms for implementation.

@@ -1,35 +1,35 @@
-andrea0: &andrea0
-  type: blog
-  author: "Andrea Bizzotto"
-  url: https://codewithandrea.com
-
-andrea1:
+hpc-applications: 
   type: article
-  title: "Flutter Project Structure: Feature-first or Layer-first?"
-  date: 2022-03-23
+  title: "High Performance Computing (HPC) Applications and Examples"
+  date: 2023-11-16
   url:
-    value: https://codewithandrea.com/articles/flutter-project-structure/
-    date: 2023-06-10
-  parent: *andrea0
-
-andrea2:
-  type: article
-  title: "Flutter Riverpod 2.0: The Ultimate Guide"
-  date: 2022-10-28
-  url:
-    value: https://codewithandrea.com/articles/flutter-state-management-riverpod/
-    date: 2023-06-10
-  parent: *andrea0
+    value: https://phoenixnap.com/kb/hpc-applications
+    date: 2024-11-26
 
 mpi41:
   type: Book
   author: 
     - Message Passing Interface Forum
   title: "MPI: A Message-Passing Interface Standard Version 4.1"
-  url: 
-    value: https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report.pdf
-    year   : 2023
-    month  : nov
+
+mpi3:
+  type: Book
+  author: 
+    - Message Passing Interface Forum
+  title: "MPI: A Message-Passing Interface Standard Version 4.1"
+  date: 2012-09-21
+  url:
+    value: https://www.mpi-forum.org/docs/mpi-3.0/mpi30-report.pdf
+    date: 2024-11-26
+mpi2:
+  type: Book
+  author: 
+    - Message Passing Interface Forum
+  title: "MPI: A Message-Passing Interface Standard Version 4.1"
+  date: 2003-11-15
+  url:
+    value: https://www.mpi-forum.org/docs/mpi-2.0/mpi2-report.pdf
+    date: 2024-11-26
 
 quaranta-mpi:
   type: Article
@@ -138,7 +138,6 @@ williams2019c:
   title: C++ Concurrency in Action
   author: Williams, A.
   isbn: 9781638356356
-  url: https://books.google.com.vn/books?id=BzgzEAAAQBAJ
   year: 2019
   publisher: Manning
 
@@ -151,6 +150,5 @@ herlihy2020art:
     - Luchangco, V.
     - Spear, M.
   isbn: 9780123914064
-  url: https://books.google.com.vn/books?id=7MqcBAAAQBAJ
   year: 2020
   publisher: Morgan Kaufman

@@ -1,7 +1,7 @@
 = Motivation <motivation>
 Applications of high-performance computing have gained immense popularity due to
-its applications in various scientific domains @hpc-applications, from
-simulations of particle movement in physics, weather prediction, and it has
+its applications in various scientific domains, from simulations of particle
+movement in physics, weather prediction @hpc-applications, and it has also
 gained tremendous popularity with the booming of Large Language Models (LLMs),
 with the rising demands of distributed machine learning where the models are
 trained on enormous datasets.
@@ -17,8 +17,8 @@ C++11. Specifically, it is a crossover between MPI's power of communicating and
 synchronizing across different computation nodes, and C++'s power of
 communicating and synchronizing within one computation node.
 
-A recent research by Quaranta et al. @quaranta-mpi has shown the potential of
-this programming model in terms of performance through a newly proposed barrier
-algorithm. However, they have ignored a large number of existing barrier
-algorithms that have been designed for similar programming models.
-@herlihy2020art
+A recent research by Quaranta and Maddegedara @quaranta-mpi has shown the
+potential of this programming model in terms of performance through a newly
+proposed barrier algorithm. However, they have ignored a large number of
+existing barrier algorithms that have been designed for similar programming
+models. @herlihy2020art

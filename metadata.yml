@@ -1,12 +1,15 @@
 title: >-
-  studying and developing distributed barrier algorithms using the hybrid programming model combining MPI-4.1 and C++11
+  studying and developing distributed barrier algorithms using the hybrid programming model combining MPI-3 and C++11
 course:
-  name: Thesis Proposal
+  name: Specialized Project
   id: CO4029
 semester: 241
 supervisors: 
   - name: Thoại Nam
   - name: Diệp Thanh Đăng
+committee: 
+  - id: 12
+    secretary: Nguyễn Quang Hùng
 students:
   - name: Phạm Võ Quang Minh
     id: 2111762

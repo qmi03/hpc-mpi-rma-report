@@ -1,5 +1,10 @@
 #let m = yaml("/metadata.yml")
 
+#let bordered-page(body) = {
+  box(width: 100%, height: 100%, stroke: 2pt + black, inset: 1em, body)
+}
+
+#show: bordered-page
 #set align(center)
 
 #[
@@ -41,6 +46,13 @@
 
 #set text(weight: "regular", size: 15pt)
 #show: upper
+#grid(
+  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [thesis committee:\ member secretary:]), align(left, for c in m.at("committee") [
+    #v(1em, weak: true)
+    #c.at("id")\
+    #c.at("secretary")
+  ]),
+)
 #grid(
   columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [supervisors:]), align(left, for s in m.at("supervisors") [
     #v(1em, weak: true)

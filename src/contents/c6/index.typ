@@ -1,31 +1,39 @@
 = Conclusions and Future Works
+This chapter presents the accomplishments and future direction of the research.
 
-== Accomplishments This Semester
+@accomplishments highlights the progress made this semester, including the
+implementation of Brook's two-process barrier algorithm using MPI's RMA
+operations.
+
+@future_works outlines the planned research trajectory, focusing on further
+algorithm development, benchmarking, and integration into larger systems. This
+chapter concludes with a Gantt chart timeline illustrating the key milestones
+and activities for the upcoming semester.
+#pagebreak()
+
+== Accomplishments This Semester <accomplishments>
 Within the confines of this semester, I have:
 - Studied and familiarized myself with MPI and its One-Sided Communication
   techniques
 - Explored C++11 threading and concurrency features
-- Conducted in-depth research on barrier synchronization algorithms for shared
-  memory models
 - Successfully implemented the two-process Brooks barrier algorithm utilizing
   MPI's Remote Memory Access (RMA) Operations
 
-== Planned Research Trajectory
+== Planned Research Trajectory <future_works>
 For the upcoming semester, my research will focus on:
+- Understanding of C++ and MPI Memory model to implement C++ and MPI Hybrid model
 - Extending barrier algorithm implementations using MPI's RMA Operations and
   One-Sided Communication techniques
-- Implements barrier algorithm on C++ shared memory model
-- Implement C++ and MPI Hybrid model
-- Comprehensive testing of proposed algorithms on existing computational clusters
-- Rigorous performance benchmarking to identify and select optimal barrier
-  synchronization strategies
-- Potential integration and contribution to existing applications
+- Implement barrier algorithm on C++ shared memory model
+- Testing of proposed algorithms on existing computational clusters
+- Performance benchmarking to identify and select optimal barrier synchronization
+  strategies
+- Integration and contribution to existing applications
 
-== Gantt chart timeline
 #import "@preview/timeliney:0.0.1"
 
 #figure(
-  caption: [Gantt chart timeline.], timeliney.timeline(
+  kind: image, caption: [Gantt chart timeline.], timeliney.timeline(
     show-grid: true, {
       import timeliney: *
 
