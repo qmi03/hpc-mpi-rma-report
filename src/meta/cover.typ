@@ -60,6 +60,7 @@
   ]),
 )
 
+#lower[---o0o---]
 #grid(
   columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [Student:]), align(left, for s in m.at("students") [
     #v(1em, weak: true)
