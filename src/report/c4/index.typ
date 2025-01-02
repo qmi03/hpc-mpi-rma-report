@@ -1,11 +1,11 @@
 #import "@preview/lovelace:0.3.0": *
-= Algorithm <algorithm>
-This chapter presents Brook's barrier algorithm within the context of the shared
-memory model (@brook_algo).
+= Adaptation from shared memory to distributed memory <algorithm>
+This chapter presents my proposed adaptation of Brook's barrier algorithm within the context of distributed memory models.
+
+@brook_algo presents Brook's barrier algorithm within the context of the shared memory model.
 
 @impl provides a straightforward implementation of Brook's two-process barrier
 algorithm in a distributed memory programming model using MPI's Remote Memory Access (RMA) operations.
-
 
 #pagebreak()
 == Brook Algorithm <brook_algo>
@@ -114,14 +114,14 @@ None
 
     + *while* target_flag *is* false *do* wait
       + MPI_WIN_LOCK(win)
-      + MPI_GET_ACCUMULATE(&target_flag, 0, MPI_CXX_BOOL, &target_flag, 1, MPI_CXX_BOOL, target_rank, 0, 1, MPI_CXX_BOOL, MPI_NO_OP, win);
+      + MPI_GET_ACCUMULATE(&target_flag, 0, BOOL, &target_flag, 1, BOOL, target_rank, 0, 1, BOOL, MPI_NO_OP, win);
       + MPI_WIN_FLUSH(win)
       + MPI_WIN_UNLOCK(win)
     + *end while*
 
     + false_value ← false
     + MPI_WIN_LOCK(win)
-    + MPI_ACCUMULATE(&false_value, 1, MPI_CXX_BOOL, target_rank, 0, 1, MPI_CXX_BOOL, MPI_REPLACE, win_buffer_handler);
+    + MPI_ACCUMULATE(&false_value, 1, BOOL, target_rank, 0, 1, BOOL, MPI_REPLACE, win);
     + MPI_WIN_FLUSH(win)
     + MPI_WIN_UNLOCK(win)
 
