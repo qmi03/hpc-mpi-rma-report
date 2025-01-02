@@ -25,17 +25,17 @@ This chapter establishes the theoretical and technical foundations of the resear
 
 - Integration of shared and distributed memory paradigms
 - Hybrid programming models in modern HPC
-- Performance considerations and optimization strategies
-- Current challenges and architectural implications
 
 *@related-works[] Related Works*
 
 Surveys existing research and approaches to barrier synchronization algorithms.
 
-*@algorithm[] Algorithm*
+*@algorithm[] Adaptation from shared memory to distributed memory*
 
-Details the proposed barrier synchronization methods, including the Brooks
-barrier algorithm.
+This chapter introduces an adaptation of Brook’s barrier algorithm, 
+originally designed for shared memory models, to distributed memory systems using MPI’s Remote Memory Access (RMA) operations.
+
+This implementation leverages MPI RMA primitives for efficient communication in distributed memory systems, preserving the core synchronization logic of Brook’s original algorithm.
 
 *@results[] Preliminary Results*
 

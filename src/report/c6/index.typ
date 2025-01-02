@@ -19,12 +19,18 @@ Within the confines of this semester, I have:
 - Successfully implemented the two-process Brooks barrier algorithm utilizing
   MPI's Remote Memory Access (RMA) Operations
 
+== Challenges and Learnings
+Parallel programming has always been alien to me, and the learning curve has been steep.
+Having to read and understand the MPI standard documentation and history posed quite a challenge.
+However, the experience has been rewarding, and I have gained a deeper understanding
+of distributed memory models and synchronization techniques.
+However, I have yet to implement a fully functional barrier algorithm for the hybrid model, 
+having only adapted the two-process Brook's barrier algorithm from shared memory to distributed memory.
+
 == Planned Research Trajectory <future_works>
 For the upcoming semester, my research will focus on:
 - Understanding of C++ and MPI Memory model to implement C++ and MPI Hybrid model
-- Extending barrier algorithm implementations using MPI's RMA Operations and
-  One-Sided Communication techniques
-- Implement barrier algorithm on C++ shared memory model
+- Adapting and Implementing barrier algorithms using MPI's One-Sided Communication
 - Testing of proposed algorithms on existing clusters
 - Performance benchmarking to identify and select optimal barrier synchronization
   strategies

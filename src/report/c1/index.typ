@@ -17,6 +17,11 @@ capabilities of C++11. The objectives include surveying existing barrier
 synchronization algorithms and proposing methods for their deployment on current
 high-performance computing systems.
 
+@scope narrows down the project's focus, the scope includes exploring key HPC concepts,
+studying MPI-3 and C++11 threading features, and implementing a simple barrier
+synchronization algorithm using the hybrid programming model. This aims to equip the author with new concepts before
+tackling the research objectives. 
+
 The project report structure, outlined in @structure, provides a clear roadmap
 for the research. The document is organized into six chapters, progressing from
 foundational concepts to detailed algorithm proposals, experimental results, and
