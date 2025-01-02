@@ -18,7 +18,7 @@
   ),
   config-info(
     title: [#upper[#g.course.name report]],
-    subtitle: [#upper(g.title)],
+    subtitle: [#upper[studying and developing: distributed barrier algorithms using the hybrid programming model combining MPI-3 and C++11]],
     author: [#g.students.at(0).name - #g.students.at(0).id],
     date: datetime.today(),
     institution: [#g.institution],

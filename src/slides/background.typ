@@ -1,24 +1,5 @@
-= Background
-== Barrier Algorithm
-#grid(
-  columns: 2,
-  gutter: 16pt,
-  align: (center, right),
-  [#text(weight: "bold", size: 30pt)[What is a Barrier Algorithm?]],
-  figure(
-    block(image("/static/images/barrier.svg"), clip: true),
-    caption: [Barrier Algorithm],
-  ),
-)
-#image("/static/images/epoch.png")
+= What's New?
 == MPI-3
-=== Message Passing Interface (MPI)
-- MPI is a standard for message-passing between nodes in a distributed system
-- MPI is optimized for communication between nodes
-- Multiple implementations of MPI are available (OpenMPI, MPICH, MVAPICH, etc.)
-- Multiple programming languages support MPI (C, Fortran, etc.)
-
----
 #figure(
   image("/static/images/02-send-recv.png", width: 50%),
   caption: [Live program communicating with each other using MPI @intermediate-mpi],
@@ -82,7 +63,7 @@
     caption: [One-sided Communication @intermediate-mpi],
   ),
 )
-=== C++11
+== C++11
 Supports Multithreading 
 
 #sym.arrow Allows Shared memory programming model instead of Distributed memory programming model

@@ -8,16 +8,14 @@
   columns: 2,
   align: (left + horizon, center + horizon),
   [
-    3 school of thoughts:
+    2 schools of thoughts:
     - Linear
-    - Tree-based
     - Butterfly
   ],
   figure(
     grid(
-      rows: 3,
+      rows: 2,
       image("/static/images/linear.png", width: 60%),
-      image("/static/images/tree.png", width: 60%),
       image("/static/images/butterfly-barrier.png", width: 60%),
     ),
     caption: [Barrier Algorithm Selection],
