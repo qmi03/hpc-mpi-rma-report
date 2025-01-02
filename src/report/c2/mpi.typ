@@ -52,8 +52,9 @@ Within MPI standards, the primitive communication operations are as follows:
   and MPI_FETCH_AND_OP
 - Remote atomic swap: MPI_COMPARE_AND_SWAP
 The primitive synchronization operations are:
-- Active Target Communication:
-- Passive Target Communication:
+- Active Target Communication: MPI_WIN_FENCE, MPI_WIN_POST, MPI_WIN_START,
+  MPI_WIN_COMPLETE, MPI_WIN_WAIT
+- Passive Target Communication: MPI_WIN_LOCK, MPI_WIN_UNLOCK
 
 == Memory Model
 MPI supports two distinct memory models:
