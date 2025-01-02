@@ -55,7 +55,46 @@ The primitive synchronization operations are:
 - Active Target Communication: MPI_WIN_FENCE, MPI_WIN_POST, MPI_WIN_START,
   MPI_WIN_COMPLETE, MPI_WIN_WAIT
 - Passive Target Communication: MPI_WIN_LOCK, MPI_WIN_UNLOCK
-
+Example @mpi41: Implementing a critical region between multiple MPI processes with compare and swap.
+The call to MPI_WIN_SYNC is necessary on Process A after local initialization of A to guarantee the public copy has been updated with the initialization value found in the private copy.
+It would also be valid to call MPI_ACCUMULATE with MPI_REPLACE to directly initialize the public copy.
+A call to MPI_WIN_FLUSH would be necessary to assure A in the public copy of Process A had been updated before the barrier.
+#grid(
+  columns: (1fr, 1fr), // Auto width for step numbers, equal width for processes
+  gutter: 10pt, // Space between columns
+  rows: auto, // Rows sized automatically to fit the content
+  align: left,
+  // Step numbers column
+  // Process 1 column
+[  *Process A*],
+[  *Process B*],
+[  MPI_Win_lock_all ],
+[  MPI_Win_lock_all ],
+[  atomic location A ],
+[],
+[  A=0 ],
+[],
+[MPI_Win_sync ],
+[],
+[MPI_Barrier ],
+[MPI_Barrier ],
+[stack variable r = 1 ],
+[stack variable r = 1 ],
+[while(r != 0) do ],
+[while(r != 0) do ],
+[ r = MPI_Compare_and_swap(A, 0, 1) ],
+[ r = MPI_Compare_and_swap(A, 0, 1) ],
+[MPI_Win_flush(A) ],
+[MPI_Win_flush(A) ],
+[done ],
+[done ],
+[\// critical region ],
+[\// critical region ],
+[r = MPI_Compare_and_swap(A, 1, 0) ],
+[r = MPI_Compare_and_swap(A, 1, 0) ],
+[MPI_Win_unlock_all ],
+[MPI_Win_unlock_all],
+)
 == Memory Model
 MPI supports two distinct memory models:
 

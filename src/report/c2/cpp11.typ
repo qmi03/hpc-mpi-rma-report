@@ -91,7 +91,7 @@ int main() {
     return 0;
 }
 ```
-], caption: [RAII-based safe thread joining])
+], caption: [RAII-based safe thread joining @cpp11])
 
 == Synchronization
 C++11 provides several RAII-compliant mechanisms to handle mutual exclusion and

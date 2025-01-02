@@ -135,6 +135,6 @@ None
 
 
 === Notes on the adapted algorithm
-The implementation uses `MPI_Get_accumulate` and `MPI_Accumulate` instead of `MPI_Get` and `MPI_Put` for
+The implementation uses `MPI_GET_ACCUMULATE` and `MPI_ACCUMULATE` instead of `MPI_GET` and `MPI_PUT` for
 atomicity guarantees. The `MPI_WIN_LOCK` and `MPI_WIN_UNLOCK` functions are used to ensure atomicity of the operations.
 
