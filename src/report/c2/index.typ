@@ -43,32 +43,8 @@ research on barrier synchronization algorithms in high-performance computing.
 #{ include "./cpp11.typ" }
 
 = HPC Context <hpc-context>
-In the landscape of high-performance computing (HPC), C++11 multithreading
-provides a standardized approach to shared-memory parallel processing. When
-considering hybrid parallelization strategies in modern HPC environments,
-C++11's threading capabilities play a crucial role alongside distributed
-computing protocols.
-
-To illustrate the complementary relationship between C++11 multithreading and
-Message Passing Interface (MPI), consider a typical HPC cluster architecture:
-
-- Within a single compute node: * C++11 multithreading provides efficient
-  shared-memory parallelism across CPU
-  cores* Thread communication occurs through direct memory access *
-  Synchronization is handled through native C++11 primitives (mutex, atomic
-  operations)* Zero-copy data sharing is possible between threads
-
-- Between cluster nodes: * MPI handles inter-node communication through message
-  passing* Network infrastructure facilitates data transfer * Explicit data
-  serialization and communication required* Each node runs independent processes
-
-This hierarchical approach to parallelism, often called hybrid parallelization,
-leverages the strengths of both paradigms:
-1. C++11 threads efficiently utilize shared memory within a node
-2. MPI manages distributed memory communication across the cluster
-3. The combination can potentially reduce the overall MPI process count
-4. Memory footprint can be optimized by sharing data between threads
-
-This makes C++11's threading library particularly effective in modern HPC
-applications, where it serves as the intra-node parallelization layer in hybrid
-MPI+threads programs.
+In the landscape of high-performance computing (HPC), this hybrid approach to
+use MPI for inter-node communication and multithreading for intra-node communication is not new.
+However, third-party libraries like OpenMP and pthread have been said to introduced some hidden bugs and other issues regarding performance @quaranta-mpi.
+The introduction of C++11, which provides a standardized approach to shared-memory parallel processing,
+threading support has made it easier to write portable, reliable and efficient code.

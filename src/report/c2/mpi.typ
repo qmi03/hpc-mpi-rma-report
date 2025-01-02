@@ -1,6 +1,6 @@
 = Message Passing Interface (MPI) <mpi>
 This section explores Message Passing Interface, its various paradigms
-for message passing (@mpi-intro). It will then shift its focus into MPI's One-Sided Communication
+for message passing (@mpi-intro). The section will then shift its focus into MPI's One-Sided Communication
 mechanics.
 
 == Introduction <mpi-intro>
