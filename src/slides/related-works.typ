@@ -1,5 +1,5 @@
 = Related Works
-== The MPI-3 C++11 Paper
+== The Paper
 - Quaranta et al @quaranta-mpi proposed a hybrid model of MPI-3 and C++11
 - Showed potential of combining MPI-3 and C++11 for a synchronization implementation
 - Potential reduction in communication overhead

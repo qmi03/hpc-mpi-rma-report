@@ -24,26 +24,6 @@
 )
 - Nodes are connected via a very fast network (Infiniband, Ethernet, etc.)
 ---
-=== Message Passing Interface (MPI)
-- MPI is a standard for message-passing between nodes in a distributed system
-- MPI is optimized for communication between nodes
-- Multiple implementations of MPI are available (OpenMPI, MPICH, MVAPICH, etc.)
-- Multiple programming languages support MPI (C, Fortran, etc.)
-#figure(
-  image("/static/images/02-send-recv.png", width: 50%),
-  caption: [Live program communicating with each other using MPI @intermediate-mpi],
-)
-
----
-=== C++11
-- C++11 is a standard for the C++ programming language released in 2011
-- C++11 provides support for multithreading and parallel programming
-//- Historically, we have to rely on 3rd party libraries like \<pthread> and Windows API to support multithreading in C++
-- C++11 provides native support for multithreading
-#figure(
-  image("/static/images/c-11.png", width: 45%),
-  caption: [Features introduced in C++11 @cpp-cyberplusIndia],
-)
 === The Paper
 - Quaranta et al @quaranta-mpi proposed to combine MPI-3 and C++11 (hybrid model)
 - Only implements a simple barrier algorithm using the hybrid model

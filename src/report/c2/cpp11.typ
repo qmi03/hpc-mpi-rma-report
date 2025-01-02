@@ -93,9 +93,9 @@ int main() {
 ```
 ], caption: [RAII-based safe thread joining])
 
-== Race Condition Prevention
+== Synchronization
 C++11 provides several RAII-compliant mechanisms to handle mutual exclusion and
-prevent race conditions
+prevent race conditions.
 
 === Basic Mutex Operations
 Mutexes (mutual exclusion objects) provide the most fundamental way to protect

@@ -8,8 +8,8 @@ programming model proposed in the thesis.
 @mpi delves into MPI, presenting it as a critical message-passing library
 interface specification. The section goes beyond traditional communication
 models by highlighting MPI's advanced capabilities, including collective
-operations, remote-memory access, and parallel I/O. A significant focus is
-placed on One-Sided Communications, a sophisticated communication mechanism that
+operations, remote-memory access, and parallel I/O. A focus is
+placed on One-Sided Communications, a communication mechanism that
 allows a single MPI process to independently manage communication tasks. The
 section elaborates on the various Remote Memory Access (RMA) operations and
 explores two distinct memory models: Separate and Unified Memory Models.
@@ -25,8 +25,8 @@ libraries.
 
 The concluding @hpc-context bridges these technologies within the
 high-performance computing context. It illustrates how C++11 multithreading and
-MPI can complement each other: C++11 provides efficient inter-core communication
-within a single node, while MPI handles communication between different
+MPI can complement each other: C++11 provides efficient intra-node communication
+within a single node, while MPI handles inter-node communication between different
 computers in a cluster. This perspective sets the stage for the thesis's
 exploration of a hybrid programming model that leverages the strengths of both
 technologies.

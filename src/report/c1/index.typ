@@ -1,8 +1,9 @@
 = Introduction <introduction>
 
-Chapter 1 introduces the project's research focus on distributed barrier
-synchronization algorithms in high-performance computing. @motivation explores
-the motivation behind the research, highlighting the growing importance of
+Chapter 1 introduces the project's research topic, focusing on distributed barrier
+synchronization algorithms in high-performance computing.
+
+@motivation explores the motivation behind the research, highlighting the growing importance of
 high-performance computing across scientific domains, including large language
 model training and complex simulations. Particularly, the section emphasizes the
 critical role of barrier algorithms in synchronizing computational processes

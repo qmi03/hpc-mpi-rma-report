@@ -1,7 +1,7 @@
 = Motivation <motivation>
 Applications of high-performance computing have gained immense popularity due to
 its applications in various scientific domains, from simulations of particle
-movement in physics @hpc-applications, weather prediction , and it has also
+movement in physics @hpc-applications, weather prediction @nasa-weather, and it has also
 gained tremendous popularity with the booming of Large Language Models (LLMs),
 with the rising demands of distributed machine learning where the models are
 trained on enormous datasets.

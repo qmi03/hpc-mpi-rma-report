@@ -12,6 +12,19 @@
 )
 #image("/static/images/epoch.png")
 == MPI-3
+=== Message Passing Interface (MPI)
+- MPI is a standard for message-passing between nodes in a distributed system
+- MPI is optimized for communication between nodes
+- Multiple implementations of MPI are available (OpenMPI, MPICH, MVAPICH, etc.)
+- Multiple programming languages support MPI (C, Fortran, etc.)
+
+---
+#figure(
+  image("/static/images/02-send-recv.png", width: 50%),
+  caption: [Live program communicating with each other using MPI @intermediate-mpi],
+)
+
+---
 #grid(
   columns: 3,
   rows: 2,
@@ -60,17 +73,27 @@
   align: (center, center),
   text(weight: "bold")[Separate Memory],
   figure(
-    image("/static/images/separate-memory.svg", width: 62%),
+    image("/static/images/separate-memory.svg", width: 58%),
   ),
 
   text(weight: "bold")[Unified Memory],
   figure(
-    image("/static/images/E02-steve-alice_step2.svg", width: 60%),
+    image("/static/images/E02-steve-alice_step2.svg", width: 50%),
     caption: [One-sided Communication @intermediate-mpi],
   ),
 )
-== C++11
-- Introduced in 2011
-- Support for multithreading and parallel programming within a single node
-- *atomic operations* are supported
-- Can use *shared memory* to communicate instead of *message passing*
+=== C++11
+Supports Multithreading 
+
+#sym.arrow Allows Shared memory programming model instead of Distributed memory programming model
+
+in the STL
+
+#sym.arrow No reliance on 3rd party libraries for multithreading programming
+
+#figure(
+  image("/static/images/c-11.png", width: 50%),
+  caption: [Features introduced in C++11 @cpp-cyberplusIndia],
+)
+
+---
