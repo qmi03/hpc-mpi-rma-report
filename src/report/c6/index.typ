@@ -5,6 +5,9 @@ This chapter presents the accomplishments and future direction of the research.
 implementation of Brook's two-process barrier algorithm using MPI's RMA
 operations.
 
+@challenges_and_learnings discusses the challenges faced and the learnings
+acquired during the semester.
+
 @future_works outlines the planned research trajectory, focusing on further
 algorithm development, benchmarking, and integration into larger systems. This
 chapter concludes with a Gantt chart timeline illustrating the key milestones
@@ -19,13 +22,23 @@ Within the confines of this semester, I have:
 - Successfully implemented the two-process Brooks barrier algorithm utilizing
   MPI's Remote Memory Access (RMA) Operations
 
-== Challenges and Learnings
-Parallel programming has always been alien to me, and the learning curve has been steep.
-Having to read and understand the MPI standard documentation and history posed quite a challenge.
-However, the experience has been rewarding, and I have gained a deeper understanding
-of distributed memory models and synchronization techniques.
-However, I have yet to implement a fully functional barrier algorithm for the hybrid model, 
-having only adapted the two-process Brook's barrier algorithm from shared memory to distributed memory.
+== Challenges and Learnings <challenges_and_learnings>
+
+My journey into parallel programming has been both challenging and enlightening.
+Initially unfamiliar with the concepts, I faced a steep learning curve,
+particularly when delving into the MPI standard documentation and its historical context.
+Understanding the intricacies of memory models and synchronization techniques required considerable effort,
+including extensive reading and iterative comprehension of the MPI standard.
+
+Grasping the underlying memory model and the mechanics of one-sided communication was crucial.
+Although the adaptation itself was straightforward, the preparatory work - building a robust conceptual framework -
+posed a significant challenge.
+
+Despite the challenges, this process has been highly rewarding. 
+I have developed a solid foundation in distributed memory models and synchronization techniques. 
+However, my work remains a stepping stone; while I successfully adapted Brook’s barrier algorithm to distributed memory, 
+I have yet to achieve a fully functional implementation for hybrid memory models. 
+This leaves room for future exploration and growth in this domain.
 
 == Planned Research Trajectory <future_works>
 For the upcoming semester, my research will focus on:
