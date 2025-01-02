@@ -1,4 +1,4 @@
-= Background
+= Background <background>
 Chapter 2 provides a comprehensive background on the fundamental technologies
 underlying the research: Message Passing Interface (MPI) and C++11
 Multithreading. The chapter explores these technologies within the context of
@@ -52,7 +52,7 @@ computing protocols.
 To illustrate the complementary relationship between C++11 multithreading and
 Message Passing Interface (MPI), consider a typical HPC cluster architecture:
 
-- Within a single computation node: * C++11 multithreading provides efficient
+- Within a single compute node: * C++11 multithreading provides efficient
   shared-memory parallelism across CPU
   cores* Thread communication occurs through direct memory access *
   Synchronization is handled through native C++11 primitives (mutex, atomic

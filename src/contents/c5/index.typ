@@ -1,4 +1,4 @@
-= Preliminary Results
+= Preliminary Results <results>
 This chapter showcases the preliminary test result of the Brook's two-process
 barrier algorithm using MPI's RMA operations.
 #pagebreak()

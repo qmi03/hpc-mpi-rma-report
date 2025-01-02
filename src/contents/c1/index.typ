@@ -8,7 +8,7 @@ model training and complex simulations. Particularly, the section emphasizes the
 critical role of barrier algorithms in synchronizing computational processes
 across different nodes.
 
-@objectives details the thesis objectives, which encompass a comprehensive
+@objectives details the project objectives, which encompass a comprehensive
 exploration of high-performance computing concepts, including MPI-3 and C++11
 threading technologies. The research aims to investigate a hybrid programming
 model that combines the communication strengths of MPI with the synchronization

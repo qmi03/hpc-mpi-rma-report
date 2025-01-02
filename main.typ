@@ -17,14 +17,15 @@
 #import "@preview/numbly:0.1.0": numbly
 #set heading(numbering: numbly(
   "Chapter {1:I}:",
-  "{1}.{2}.",
-  "{1}.{2}.{3}.",
-  "{1}.{2}.{3}.{4}.",
+  "{1}.{2}",
+  "{1}.{2}.{3}",
+  "{1}.{2}.{3}.{4}",
 ))
 #show heading: it => {
   it
   v(.5em)
 }
+#set list(indent: 10pt)
 
 #{ include "/src/index.typ" }
 

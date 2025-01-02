@@ -1,29 +1,48 @@
-= Thesis structure <structure>
-*Chapter 1: Introduction*
+= Project report structure <structure>
+The rest of this report is organized as follows:
 
-Provides an overview of the thesis, including the motivation, objectives, and
-structure.
+*@background[] Background*
 
-*Chapter 2: Background*
+This chapter establishes the theoretical and technical foundations of the research through three main sections:
 
-Introduces foundational concepts in HPC, MPI-3, and C++11, focusing on
-multithreading and synchronization.
+Message Passing Interface (MPI-3)
 
-*Chapter 3: Related Works*
+Evolution and significance in distributed computing
+Advanced communication mechanisms, focusing on One-Sided Communications
+Remote Memory Access (RMA) operations and memory models
+Collective operations and parallel I/O capabilities
+
+
+Modern C++11 Multithreading
+
+Native threading support and platform independence
+Thread management and synchronization primitives
+Memory model and atomic operations
+Asynchronous programming features and their implications
+
+
+High-Performance Computing Context
+
+Integration of shared and distributed memory paradigms
+Hybrid programming models in modern HPC
+Performance considerations and optimization strategies
+Current challenges and architectural implications
+
+*@related-works[] Related Works*
 
 Surveys existing research and approaches to barrier synchronization algorithms.
 
-*Chapter 4: Algorithm*
+*@algorithm[] Algorithm*
 
 Details the proposed barrier synchronization methods, including the Brooks
 barrier algorithm.
 
-*Chapter 5: Results*
+*@results[] Preliminary Results*
 
 Presents the implementation outcomes, experimental results, and performance
 analysis.
 
-*Chapter 6: Conclusions and Future Works*
+*@conclusions[] Conclusions and Future Works*
 
 Summarizes accomplishments, outlines future research directions, and provides a
 timeline for planned activities.

@@ -1,5 +1,5 @@
-#import "/macros.typ":cxx
-= Related Works
+#import "/macros.typ": cxx
+= Related Works <related-works>
 This section examines two key areas relevant to my implementation: barrier
 synchronization algorithms and hybrid parallelization approaches.
 
@@ -25,7 +25,7 @@ capabilities.
 
 #set heading(offset: 0)
 == Design Decisions <design-decision>
-From these works, my proposal for a barrier algorithm within a computation node
+From these works, my proposal for a barrier algorithm within a compute node
 like C++ will use the broadcast-based cache-coherent multiprocessors method. For
 inter-core communication, I will implement the second approach. This choice
 aligns with the expectation that modern multi-core processors typically maintain
