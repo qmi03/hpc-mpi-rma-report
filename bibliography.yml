@@ -1,5 +1,5 @@
 hpc-applications: 
-  type: article
+  type: web
   title: "High Performance Computing (HPC) Applications and Examples"
   date: 2023-11-16
   url:
@@ -7,29 +7,29 @@ hpc-applications:
     date: 2024-11-26
 
 mpi41:
-  type: Book
+  type: book
   author: 
     - Message Passing Interface Forum
   title: "MPI: A Message-Passing Interface Standard Version 4.1"
+  url:
+    value: "https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report.pdf"
+    date: 2023-11
 
 mpi3:
-  type: Book
+  type: book
   author: 
     - Message Passing Interface Forum
-  title: "MPI: A Message-Passing Interface Standard Version 4.1"
+  title: "MPI: A Message-Passing Interface Standard Version 3.0"
   date: 2012-09-21
-  url:
-    value: https://www.mpi-forum.org/docs/mpi-3.0/mpi30-report.pdf
-    date: 2024-11-26
+  publisher: "High Performance Computing Center Stuttgart (HLRS)"
+
 mpi2:
   type: Book
   author: 
     - Message Passing Interface Forum
-  title: "MPI: A Message-Passing Interface Standard Version 4.1"
-  date: 2003-11-15
-  url:
-    value: https://www.mpi-forum.org/docs/mpi-2.0/mpi2-report.pdf
-    date: 2024-11-26
+  title: "MPI: A Message-Passing Interface Standard, Version 2.1"
+  date: 2008-06-23
+  publisher: "High Performance Computing Center Stuttgart (HLRS)"
 
 quaranta-mpi:
   type: Article
@@ -47,7 +47,7 @@ quaranta-mpi:
     volume: 157
 
 butterfly-barrier:
-  type: Article
+  type: article
   author:
       - Brooks, Eugene D.
   title: The butterfly barrier
@@ -57,12 +57,11 @@ butterfly-barrier:
   issue: 4
   abstract: We describe an algorithm for barrier synchronization that requires only read and write to shared store. The algorithm is faster than the traditional locked counter approach for two processors and has an attractive log2N time scaling for larger N. The algorithm is free of hot spots and critical regions and requires a shared memory bandwidth which grows linearly with N, the number of participating processors. We verify the technique using both a real shared memory multiprocessor, for numbers of processors up to 30, and a shared memory multiprocessor simulator, for numbers of processors up to 256.
   serial-number:
-      doi: 10.1007/BF01407877
-      issn: 1573-7640
+    doi: 10.1007/BF01407877
+    issn: 1573-7640
   parent:
-      type: Periodical
-      title: International Journal of Parallel Programming
-
+    type: Periodical
+    title: International Journal of Parallel Programming
 
 sync-algos:
   type: article
@@ -70,12 +69,9 @@ sync-algos:
     - John M. Mellor-Crummey
     - Michael L. Scott
   title: Algorithms for Scalable Synchronization on Shared-Memory Multiprocessors
-  year: 1991
   issue_date: Feb. 1991
   publisher: Association for Computing Machinery
-  address: New York, NY, USA
   volume: 9
-  number: 1
   serial-number:
     doi: 10.1145/103727.103729
     issn: 0734-2071
@@ -105,40 +101,27 @@ sync-algos:
     The existence of scalable algorithms greatly weakens the case for costly special-purpose
     hardware support for synchronization, and provides a case against so-called “dance hall”
     architectures, in which shared memory locations are equally far from all processors.
-  journal: ACM Transactions on Computer Systems
-  month: February
-  pages: 21-65
-  num_pages: 45
-
-article-key:
-  type: Article
-  title: # Title of the paper
-  author: # List of authors
-  date: # Publication year
-  serial-number:
-      doi: 10.1016/j.jpdc.2021.06.008
-  parent:
-      type: Periodical
-      title: # Journal name
-      volume: # Volume number
-      issue: # Issue number
+  page-range: 21-65
+  page-total: 45
 
 dissemination:
-  type: thesis
+  type: book
   title: An Optimal Scheme for Disseminating Information
   authors:
     - Yijie Han
     - Raphael A. Finkel
-  booktitle: International Conference on Parallel Processing
-  year: 1988
+  date: 1988
   publisher: University of Kentucky, Department of Computer Science
 
 williams2019c:
   type: book
   title: C++ Concurrency in Action
   author: Williams, A.
-  isbn: 9781638356356
-  year: 2019
+  serial-number:
+    isbn: 9781638356356
+  edition: 2
+  date: 2019
+  page-range: 1-172
   publisher: Manning
 
 herlihy2020art:
@@ -149,6 +132,8 @@ herlihy2020art:
     - Shavit, N.
     - Luchangco, V.
     - Spear, M.
-  isbn: 9780123914064
-  year: 2020
+  edition: 2
+  serial-number:
+    isbn: "012391406X, 9780123914064"
+  date: 2020
   publisher: Morgan Kaufman
