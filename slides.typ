@@ -2,8 +2,9 @@
 #import themes.stargazer: *
 #import "@preview/numbly:0.1.0": numbly
 
+#show: magic.bibliography-as-footnote.with(bibliography("/bibliography.yml", title: none))
 #let g = yaml("/globals.yml")
-#set text(font: g.at("fonts").at("serif"))
+#set text(font: g.at("fonts-slide").at("serif"))
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #show: stargazer-theme.with(
   aspect-ratio: "16-9",
@@ -31,8 +32,3 @@
 #outline-slide()
 
 #{ include "/src/slides/index.typ" }
-
-#bibliography("bibliography.yml")
-
-#magic.bibliography-as-footnote.with(bibliography("bibliography.yml"))
-

@@ -18,3 +18,6 @@ students:
 fonts:
   serif: "Times New Roman"
   monospace: "JetBrains Mono"
+fonts-slide:
+  serif: "STIX Two Text"
+  monospace: "JetBrains Mono"
