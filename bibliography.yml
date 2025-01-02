@@ -137,3 +137,52 @@ herlihy2020art:
     isbn: "012391406X, 9780123914064"
   date: 2020
   publisher: Morgan Kaufman
+
+cpp-cyberplusIndia:
+  type: web
+  title: Technical CPP Blog
+  url:
+    value: https://www.cyberplusindia.com/blog/index.php/category/technical/cpp/
+    date: 2025-01-01
+
+moores-law-graph:
+  type: web
+  title: Moore's Law Transistor Count 1971-2018
+  url:
+    value: https://upload.wikimedia.org/wikipedia/commons/8/8b/Moore%27s_Law_Transistor_Count_1971-2018.png
+    date: 2025-01-01
+
+intermediate-mpi:
+  type: web
+  title: Introduction to MPI - MPI Send and Receive
+  url:
+    value: https://pdc-support.github.io/introduction-to-mpi/03-mpi_send_recv/index.html
+    date: 2025-01-01
+
+nasa-weather:
+  type: web
+  title: NASA Global Weather Forecasting
+  url:
+    value: https://www.nccs.nasa.gov/sci-tech/case-studies/nasa-global-weather-forecasting
+    date: 2025-01-01
+
+verbraeken-2020:
+  type: Article
+  title: A Survey on Distributed Machine Learning
+  volume: 53
+  serial-number:
+    doi: 10.1145/3377454
+    issn: 1557-7341
+  url:
+    value: http://dx.doi.org/10.1145/3377454
+  parent:
+    type: Periodical
+    title: ACM Computing Surveys
+  publisher: Association for Computing Machinery (ACM)
+
+hpc-cluster:
+  type: web
+  title: What is an HPC Cluster?
+  url:
+    value: https://www.hpc.iastate.edu/guides/introduction-to-hpc-clusters/what-is-an-hpc-cluster
+    date: 2025-01-01

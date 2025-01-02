@@ -1,4 +1,4 @@
-#let m = yaml("/metadata.yml")
+#let g = yaml("/globals.yml")
 
 #let bordered-page(body) = {
   box(width: 100%, height: 100%, stroke: 2pt + black, inset: 1em, body)
@@ -27,7 +27,7 @@
   #set text(size: 15pt)
   #set align(center)
 
-  *#upper(m.at("course").at("name"))*
+  *#upper(g.at("course").at("name"))*
 ]
 
 #v(.5fr)
@@ -36,7 +36,7 @@
   #set par(leading: 1em)
 
   #set text(weight: "bold", size: 16pt)
-  #upper(m.at("title"))
+  #upper(g.at("title"))
 
   #set text(weight: "regular", size: 15pt)
   Major: Computer Science
@@ -47,25 +47,46 @@
 #set text(weight: "regular", size: 15pt)
 #show: upper
 #grid(
-  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [thesis committee:\ member secretary:]), align(left, for c in m.at("committee") [
-    #v(1em, weak: true)
-    #c.at("id")\
-    #c.at("secretary")
-  ]),
+  columns: (1fr, 1fr),
+  rows: (2em, auto),
+  column-gutter: .5cm,
+  align(right, [thesis committee:\ member secretary:]),
+  align(
+    left,
+    for c in g.at("committee") [
+      #v(1em, weak: true)
+      #c.at("id")\
+      #c.at("secretary")
+    ],
+  ),
 )
 #grid(
-  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [supervisors:]), align(left, for s in m.at("supervisors") [
-    #v(1em, weak: true)
-    #s.at("name")
-  ]),
+  columns: (1fr, 1fr),
+  rows: (2em, auto),
+  column-gutter: .5cm,
+  align(right, [supervisors:]),
+  align(
+    left,
+    for s in g.at("supervisors") [
+      #v(1em, weak: true)
+      #s.at("name")
+    ],
+  ),
 )
 
 #lower[---o0o---]
 #grid(
-  columns: (1fr, 1fr), rows: (2em, auto), column-gutter: .5cm, align(right, [Student:]), align(left, for s in m.at("students") [
-    #v(1em, weak: true)
-    #s.at("name") - #s.at("id")
-  ]),
+  columns: (1fr, 1fr),
+  rows: (2em, auto),
+  column-gutter: .5cm,
+  align(right, [Student:]),
+  align(
+    left,
+    for s in g.at("students") [
+      #v(1em, weak: true)
+      #s.at("name") - #s.at("id")
+    ],
+  ),
 )
 
 #v(1fr)

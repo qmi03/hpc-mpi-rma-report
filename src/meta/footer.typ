@@ -1,6 +1,6 @@
-#let m = yaml("/metadata.yml")
+#let m = yaml("/globals.yml")
 
-#set text(font: m.at("fonts").at("monospace"), size: 8pt)
+#set text(font: m.at("fonts").at("serif"), size: 8pt)
 #show: block.with(stroke: (top: 1pt), inset: (top: 1em))
 
 #locate(loc => [

@@ -3,10 +3,10 @@
 )
 
 #set par(justify: true)
-#let m = yaml("/metadata.yml")
-#let fonts = m.at("fonts")
+#let g = yaml("/globals.yml")
+#let fonts = g.at("fonts")
 
-#set document(title: m.at("title"), author: m.at("students").map(s => s.at("name")))
+#set document(title: g.at("title"), author: g.at("students").map(s => s.at("name")))
 #set text(font: fonts.at("serif"), lang: "en", size: 13pt)
 #show raw: set text(font: fonts.at("monospace"))
 #show raw.where(block: true): set block(fill: gray.lighten(90%), width: 100%, inset: (x: 1em, y: 1em))
@@ -27,6 +27,6 @@
 }
 #set list(indent: 10pt)
 
-#{ include "/src/index.typ" }
+#{ include "/src/report/index.typ" }
 
 #bibliography("/bibliography.yml", title: [References])

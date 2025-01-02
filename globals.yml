@@ -1,8 +1,10 @@
-title: >-
+title:
   studying and developing distributed barrier algorithms using the hybrid programming model combining MPI-3 and C++11
 course:
   name: Specialized Project
   id: CO4029
+institution:
+  Vietnam National University - Ho Chi Minh City University of Technology
 semester: 241
 supervisors: 
   - name: Thoại Nam
